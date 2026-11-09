@@ -1,0 +1,28 @@
+# Reglas de alerta para una ladera. Los umbrales son ilustrativos.
+programa LADERA_NORTE
+
+sensor PLUVIOMETRO;
+sensor HUMEDAD;
+
+inicio
+    limite = 40 + 12 * 3;
+    ciclos = 0;
+
+    mientras ciclos < 6 hacer
+        lluvia = leer PLUVIOMETRO;
+        suelo = leer HUMEDAD;
+
+        si lluvia > limite y suelo >= 85 entonces
+            alertar ROJA;
+        sino
+            si lluvia > limite / 2 o suelo >= 85 entonces
+                alertar NARANJA;
+            sino
+                alertar AMARILLA;
+            fin
+        fin
+
+        esperar 10;
+        ciclos = ciclos + 1;
+    fin
+fin

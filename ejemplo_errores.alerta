@@ -1,0 +1,15 @@
+# Programa con errores a propósito.
+programa DEMO_ERRORES
+
+sensor ;
+sensor HUMEDAD;
+
+inicio
+    x = 2 + * 3;
+    esperar 10
+    alertar VERDE;
+    a = 5 ! 2;
+    b = 12abc;
+    si x > 1 entonces
+        esperar 5;
+fin
