@@ -1,0 +1,4 @@
+programa P
+inicio
+    _x = 1;
+fin
